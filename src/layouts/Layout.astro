@@ -15,7 +15,9 @@ const items = [{
 }
 ]
 ---
-
+---
+import { Icon } from 'astro-icon/components'
+---
 <!doctype html>
 <html lang="en">
 	<head>
@@ -27,13 +29,22 @@ const items = [{
 		<title>{title}</title>
 	</head>
 	<body>
-		<header>
-			Acá va el encabezado 
+		<header class="container max-w-7x1 mx-auto h-16 flex-items-center ">
+	    <div class="flex space-x-6">
+        <img class="h-16" src="https://static.vecteezy.com/system/resources/previews/027/127/592/original/microsoft-logo-microsoft-icon-transparent-free-png.png" alt="">
+		<div class="w-[2px] h-12 bg-slate-800"></div>
+		<img class="h-16"   src="/public/1280px-XBOX_logo_2012.svg.png" alt="">
+	    </div>
+		<menu>
+			<a href="#" class="hover:underline underline-offset-[6px] decoration-2 ">
+				Game pass
+			</a>
+		</menu>
 		</header>
 		<div class="carrousel">
 			Slider de imagenes
-			
-		</div>
+		</div>	
+		
 		<nav>
 			{
 				items.map((item) => <a href="#" class="option">
@@ -52,10 +63,7 @@ const items = [{
 			<div class="area4">area4</div>
 
 		</div>
-
-
 		<slot />
-
 	</body>
 </html>
 <style is:global>
@@ -64,62 +72,50 @@ const items = [{
 		grid-template-areas: 'area1 area1 area2 area3'
 		                     'area1 area1 area2 area3'
 		                     'area4 area4 area2 area4' ;
-		                      
-		                                   
 	}
 
 	.area1{
 		grid-area: area1;
-		background: powderblue;
+		background: rgb(62, 141, 151);
 	}
 	.area2{
 		grid-area: area2;
-		background: palegoldenrod;
+		background: rgb(42, 25, 119);
 	}
 	.area3{
 		grid-area: area3;
-		background: papayawhip;
+		background: rgb(86, 155, 7);
 		height: 60px;
 	}
 	.area4{
 		grid-area: area4;
-		background: palegoldenrod;
+		background: rgb(165, 154, 35);
 
 	}
-
-
-
-
 
 
 	.option{
 		text-decoration: none;
 		display: flex;
 		flex-direction: column;
-		background: peachpuff;
+		background: rgb(2, 153, 34);
 		max-width: 120px;
 		height: 100%;
 		justify-content: center;
 		align-items: center;
 		transition: background 300ms ease-in-out;
-		
+
 		&:hover {
-		background: purple; 
+		background: rgb(5, 219, 15); 
 	    }
 	}
-
-	
-
-
-
-
 	nav {
-		background: plum;
+		background: rgb(199, 20, 7);
 		height: 60px;
 		display: flex;
     }
 	header{
-		background: purple;
+		background: rgb(6, 44, 128);
 		height: 36px;
 	}
 	.carrousel{
@@ -128,11 +124,10 @@ const items = [{
 	}
 
 
-
-	html body {
-		padding: 0;
-		margin: 0;
+	html {
 		font-family: system-ui, sans-serif;
+		background: #13151a;
+		background-size: 224px;
 	}
 	code {
 		font-family:
